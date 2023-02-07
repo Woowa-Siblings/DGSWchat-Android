@@ -36,6 +36,6 @@ fun ChatDto.toModel(): ChatRequest = ChatRequest(
 
 fun ChatResponse.toEntity(): Chat = Chat(
     message = this.result.text,
-    time = LocalTime.now(),
+    time = LocalTime.now().toString(),
     isAuthor = 0
 )

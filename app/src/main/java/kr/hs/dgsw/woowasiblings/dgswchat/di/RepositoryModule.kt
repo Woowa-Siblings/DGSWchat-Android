@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kr.hs.dgsw.woowasiblings.dgswchat.data.database.dao.ChatDao
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.api.ChatApi
 import kr.hs.dgsw.woowasiblings.dgswchat.data.repository.ChatRepositoryImpl
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.repository.ChatRepository
@@ -17,7 +18,8 @@ object RepositoryModule {
     @Singleton
     fun provideChatRepository(
         api: ChatApi,
+        dao: ChatDao
     ): ChatRepository {
-        return ChatRepositoryImpl(api)
+        return ChatRepositoryImpl(api, dao)
     }
 }

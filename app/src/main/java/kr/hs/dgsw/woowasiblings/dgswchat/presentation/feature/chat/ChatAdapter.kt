@@ -8,7 +8,6 @@ import kr.hs.dgsw.woowasiblings.dgswchat.R
 import kr.hs.dgsw.woowasiblings.dgswchat.databinding.ChatItemAuthorBinding
 import kr.hs.dgsw.woowasiblings.dgswchat.databinding.ChatItemBinding
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.Chat
-import java.time.LocalDateTime
 import java.time.LocalTime
 
 class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -62,14 +61,14 @@ class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         fun bind(item: Chat) {
             binding.tvMessage.text = item.message
-            binding.tvTime.text = LocalTime.now().toString()
+            binding.tvTime.text = "${item.time.split(":")[0]}:${item.time.split(":")[1]}"
         }
     }
     inner class AuthorViewHolder(private val binding: ChatItemAuthorBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Chat) {
             binding.tvMessage.text = item.message
-            binding.tvTime.text = LocalDateTime.now().minute.toString()
+            binding.tvTime.text = "${item.time.split(":")[0]}:${item.time.split(":")[1]}"
         }
     }
 

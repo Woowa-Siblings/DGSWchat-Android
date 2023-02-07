@@ -7,7 +7,7 @@ import java.time.LocalTime
 @Entity(tableName = "chat_entity")
 data class ChatEntity(
     @PrimaryKey
-    val time: LocalTime,
+    val time: String,
     val message: String,
     val isAuthor: Int,
 )

@@ -15,9 +15,7 @@ class ChatRepositoryImpl @Inject constructor(
 ): ChatRepository {
 
     override suspend fun getChatMessage(chatDto: ChatDto): Chat =
-        chatApi.getChatMessage(chatDto.toModel()).toEntity().also {
-            insertChat(it)
-        }
+        chatApi.getChatMessage(chatDto.toModel()).toEntity()
 
     override suspend fun getAllMessages(): List<Chat> =
         chatDao.getAllChatMessage().map { it.toEntity() }
