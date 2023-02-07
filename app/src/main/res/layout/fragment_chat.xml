@@ -84,7 +84,7 @@
                     android:layout_marginEnd="20dp"
                     android:backgroundTint="@android:color/transparent"
                     android:hint="우리의 친구 소구에게 물어볼세요!"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/btn_send"

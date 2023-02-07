@@ -30,11 +30,11 @@ class LoginFragment: BaseFragment<FragmentLoginBinding, LoginViewModel>(R.layout
                         )
                     )
                 }
-                etIdLayout.setOnFocusChangeListener { _, hasFocus ->
+                etId.setOnFocusChangeListener { _, hasFocus ->
                     if (hasFocus) etIdLayout.setStartIconDrawable(R.drawable.focus_user)
                     else etIdLayout.setStartIconDrawable(R.drawable.unfocus_user)
                 }
-                etPwLayout.setOnFocusChangeListener { _, hasFocus ->
+                etPw.setOnFocusChangeListener { _, hasFocus ->
                     if (hasFocus) etPwLayout.setStartIconDrawable(R.drawable.focus_lock)
                     else etPwLayout.setStartIconDrawable(R.drawable.unfocus_lock)
                 }

@@ -1,4 +1,4 @@
-package kr.hs.dgsw.woowasiblings.dgswchat.data.util
+package kr.hs.dgsw.woowasiblings.dgswchat.data.network.response
 
 data class Response<T>(
     val status: Int,

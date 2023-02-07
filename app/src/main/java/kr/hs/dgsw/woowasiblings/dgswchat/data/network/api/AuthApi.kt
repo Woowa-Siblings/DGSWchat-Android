@@ -1,11 +1,11 @@
 package kr.hs.dgsw.woowasiblings.dgswchat.data.network.api
 
-import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.LoginRequest
-import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.RegisterRequest
-import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.TokenRequest
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.auth.LoginRequest
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.auth.RegisterRequest
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.auth.TokenRequest
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.auth.RefreshTokenResponse
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.auth.TokenResponse
-import kr.hs.dgsw.woowasiblings.dgswchat.data.util.Response
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

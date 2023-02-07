@@ -1,6 +1,6 @@
 package kr.hs.dgsw.woowasiblings.dgswchat.data.network.api
 
-import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.ChatRequest
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.chat.ChatRequest
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.chat.ChatResponse
 import kr.hs.dgsw.woowasiblings.dgswchat.data.util.Content_Type
 import kr.hs.dgsw.woowasiblings.dgswchat.data.util.X_NCP_APIGW_API_KEY

@@ -1,4 +1,4 @@
-package kr.hs.dgsw.woowasiblings.dgswchat.data.network.request
+package kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.auth
 
 data class RegisterRequest(
     val userId: String,

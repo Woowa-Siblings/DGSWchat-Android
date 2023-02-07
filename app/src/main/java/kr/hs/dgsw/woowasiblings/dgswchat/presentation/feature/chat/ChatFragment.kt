@@ -38,6 +38,9 @@ class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>(R.layout.f
                         )
                         etMessage.text = null
                     }
+                    btnBack.setOnClickListener {
+                        requireActivity().supportFragmentManager.popBackStack()
+                    }
                 }
             }
         }

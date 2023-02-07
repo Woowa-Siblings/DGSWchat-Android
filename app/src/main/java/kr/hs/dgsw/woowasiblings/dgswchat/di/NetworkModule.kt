@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import kr.hs.dgsw.woowasiblings.dgswchat.App
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.api.AuthApi
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.api.ChatApi
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.api.PostApi
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.BASE_URL
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.CLOVA_URL
 import okhttp3.Interceptor
@@ -78,6 +79,11 @@ object NetworkModule {
     @Singleton
     fun provideAuthApi(retrofit: Retrofit): AuthApi =
         retrofit.create(AuthApi::class.java)
+
+    @Provides
+    @Singleton
+    fun providePostApi(retrofit: Retrofit): PostApi =
+        retrofit.create(PostApi::class.java)
 
     @Provides
     @Singleton
