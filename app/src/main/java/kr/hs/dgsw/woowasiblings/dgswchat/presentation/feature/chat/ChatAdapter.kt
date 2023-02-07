@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kr.hs.dgsw.woowasiblings.dgswchat.R
 import kr.hs.dgsw.woowasiblings.dgswchat.databinding.ChatItemAuthorBinding
 import kr.hs.dgsw.woowasiblings.dgswchat.databinding.ChatItemBinding
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.Chat
-import java.time.LocalTime
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.Chat
 
 class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

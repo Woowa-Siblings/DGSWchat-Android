@@ -6,7 +6,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kr.hs.dgsw.woowasiblings.dgswchat.R
 import kr.hs.dgsw.woowasiblings.dgswchat.databinding.ActivityMainBinding
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.base.BaseActivity
-import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.chat.ChatFragment
+import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.login.LoginFragment
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
@@ -21,7 +21,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
 
     override fun start() {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment, ChatFragment())
+            .replace(R.id.fragment, LoginFragment())
             .commit()
     }
 

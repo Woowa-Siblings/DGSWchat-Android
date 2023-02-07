@@ -1,8 +1,7 @@
 package kr.hs.dgsw.woowasiblings.dgswchat.domain.repository
 
-import kr.hs.dgsw.woowasiblings.dgswchat.data.database.entity.ChatEntity
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.Chat
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.ChatDto
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.Chat
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.ChatDto
 
 interface ChatRepository {
 

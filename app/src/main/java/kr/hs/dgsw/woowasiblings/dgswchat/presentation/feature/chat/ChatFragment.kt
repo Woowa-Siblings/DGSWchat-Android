@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kr.hs.dgsw.woowasiblings.dgswchat.R
 import kr.hs.dgsw.woowasiblings.dgswchat.databinding.FragmentChatBinding
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.Chat
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.Chat
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.base.BaseFragment
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.extension.repeatOnStarted
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.chat.ChatViewModel.Event
@@ -59,8 +59,4 @@ class ChatFragment : BaseFragment<FragmentChatBinding, ChatViewModel>(R.layout.f
             }
             is Event.UnkownException -> shortToast("알 수 없는 오류가 발생했습니다.")
         }
-
-    private fun shortToast(message: String) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-    }
 }

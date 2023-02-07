@@ -3,8 +3,8 @@ package kr.hs.dgsw.woowasiblings.dgswchat.data.mapper
 import kr.hs.dgsw.woowasiblings.dgswchat.data.database.entity.ChatEntity
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.ChatRequest
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.chat.ChatResponse
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.Chat
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.ChatDto
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.Chat
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.ChatDto
 import java.time.LocalTime
 
 fun ChatEntity.toEntity(): Chat = Chat(

@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.main.MainActivity
 
 abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel>(
     @LayoutRes private val layoutRes: Int
@@ -42,5 +44,9 @@ abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel>(
         binding.setVariable(2, mViewModel)
         binding.lifecycleOwner = this
         binding.executePendingBindings()
+    }
+
+    fun shortToast(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 }

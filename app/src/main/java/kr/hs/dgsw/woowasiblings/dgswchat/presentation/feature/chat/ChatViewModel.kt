@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.Chat
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.ChatDto
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.Chat
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.ChatDto
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.repository.ChatRepository
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.base.BaseViewModel
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.MutableEventFlow

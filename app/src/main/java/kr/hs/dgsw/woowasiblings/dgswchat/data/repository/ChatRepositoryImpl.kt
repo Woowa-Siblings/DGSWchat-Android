@@ -4,8 +4,8 @@ import kr.hs.dgsw.woowasiblings.dgswchat.data.database.dao.ChatDao
 import kr.hs.dgsw.woowasiblings.dgswchat.data.mapper.toEntity
 import kr.hs.dgsw.woowasiblings.dgswchat.data.mapper.toModel
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.api.ChatApi
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.Chat
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.ChatDto
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.Chat
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.ChatDto
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.repository.ChatRepository
 import javax.inject.Inject
 
