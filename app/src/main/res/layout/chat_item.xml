@@ -11,6 +11,17 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp">
 
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="25dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_sogu"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="3dp"
+            app:layout_constraintBottom_toTopOf="@id/cardView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="wrap_content"
@@ -19,16 +30,17 @@
             app:cardCornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/logo">
 
             <TextView
                 android:id="@+id/tv_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pretendard_regular"
+                android:maxWidth="250dp"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="6dp"
-                android:text="대소고가 뭐야?"
+                android:text="asdfljasdlkf"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 

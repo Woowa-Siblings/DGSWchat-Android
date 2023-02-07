@@ -29,6 +29,7 @@
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="6dp"
                 android:text="대소고가 뭐야?"
+                android:maxWidth="250dp"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
