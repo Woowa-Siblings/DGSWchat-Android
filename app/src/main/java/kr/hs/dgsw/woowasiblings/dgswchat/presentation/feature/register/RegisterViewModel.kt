@@ -1,52 +1,34 @@
-package kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.login
+package kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.register
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kr.hs.dgsw.woowasiblings.dgswchat.App
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.auth.Login
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.auth.LoginDto
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.auth.TokenDto
-import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.Chat
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.auth.RegisterDto
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.repository.AuthRepository
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.base.BaseViewModel
+import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.login.LoginViewModel
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.MutableEventFlow
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.asEventFlow
 import java.security.MessageDigest
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(
+class RegisterViewModel @Inject constructor(
     private val authRepository: AuthRepository
 ) : BaseViewModel() {
 
     private val _eventFLow = MutableEventFlow<Event>()
     val eventFlow = _eventFLow.asEventFlow()
 
-    fun login(loginDto: LoginDto) = viewModelScope.launch(Dispatchers.IO) {
+    fun register(registerDto: RegisterDto) = viewModelScope.launch(Dispatchers.IO) {
         kotlin.runCatching {
-            authRepository.login(loginDto)
+            authRepository.register(registerDto)
         }.onSuccess {
-            event(Event.SuccessLogin(it))
+            event(Event.SuccessRegister)
         }.onFailure {
             event(Event.UnkownException)
-            Log.d("error1", "${it.message}")
-        }
-    }
-
-    fun token(tokenDto: TokenDto) = viewModelScope.launch(Dispatchers.IO) {
-        kotlin.runCatching {
-            authRepository.token(tokenDto)
-        }.onSuccess {
-            App.prefs.accessToken = it.accessToken
-            App.prefs.refreshToken = it.refreshToken
-//            App.prefs.autoLogin = true
-            event(Event.SuccessToken)
-        }.onFailure {
-            event(Event.UnkownException)
-            Log.d("error2", "${it.message}")
         }
     }
 
@@ -75,8 +57,7 @@ class LoginViewModel @Inject constructor(
     }
 
     sealed class Event {
-        data class SuccessLogin(val code: Login): Event()
-        object SuccessToken: Event()
+        object SuccessRegister: Event()
         object UnkownException: Event()
     }
 }

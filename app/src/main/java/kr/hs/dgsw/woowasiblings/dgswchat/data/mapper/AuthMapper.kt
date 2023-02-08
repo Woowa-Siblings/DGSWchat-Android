@@ -1,8 +1,9 @@
 package kr.hs.dgsw.woowasiblings.dgswchat.data.mapper
 
-import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.LoginRequest
-import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.RegisterRequest
-import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.TokenRequest
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.auth.LoginRequest
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.auth.RegisterRequest
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.request.auth.TokenRequest
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.auth.LoginResponse
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.auth.RefreshTokenResponse
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.auth.TokenResponse
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.auth.*
@@ -32,4 +33,8 @@ fun TokenResponse.toEntity(): Token = Token(
 
 fun RefreshTokenResponse.toEntity(): RefreshToken = RefreshToken(
     accessToken = this.accessToken
+)
+
+fun LoginResponse.toEntity(): Login = Login(
+    authCode = this.authCode
 )

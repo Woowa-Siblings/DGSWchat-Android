@@ -10,6 +10,7 @@ import kr.hs.dgsw.woowasiblings.dgswchat.presentation.base.BaseFragment
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.chat.ChatViewModel
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.home.HomeFragment
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.main.MainActivity
+import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.register.RegisterFragment
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.extension.repeatOnStarted
 
 @AndroidEntryPoint
@@ -30,13 +31,11 @@ class LoginFragment: BaseFragment<FragmentLoginBinding, LoginViewModel>(R.layout
                         )
                     )
                 }
-                etId.setOnFocusChangeListener { _, hasFocus ->
-                    if (hasFocus) etIdLayout.setStartIconDrawable(R.drawable.focus_user)
-                    else etIdLayout.setStartIconDrawable(R.drawable.unfocus_user)
-                }
-                etPw.setOnFocusChangeListener { _, hasFocus ->
-                    if (hasFocus) etPwLayout.setStartIconDrawable(R.drawable.focus_lock)
-                    else etPwLayout.setStartIconDrawable(R.drawable.unfocus_lock)
+                btnRegister.setOnClickListener {
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment, RegisterFragment())
+                        .addToBackStack(null)
+                        .commit()
                 }
             }
         }
@@ -44,7 +43,7 @@ class LoginFragment: BaseFragment<FragmentLoginBinding, LoginViewModel>(R.layout
 
     private fun handleEvent(event: LoginViewModel.Event): Any =
         when (event) {
-            is LoginViewModel.Event.SuccessLogin -> mViewModel.token(TokenDto(event.code))
+            is LoginViewModel.Event.SuccessLogin -> mViewModel.token(TokenDto(event.code.authCode))
             is LoginViewModel.Event.SuccessToken -> {
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment, HomeFragment())

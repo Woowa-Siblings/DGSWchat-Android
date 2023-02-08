@@ -10,8 +10,8 @@ import javax.inject.Inject
 class AuthRepositoryImpl @Inject constructor(
     private val authApi: AuthApi
 ) : AuthRepository {
-    override suspend fun login(loginDto: LoginDto): String =
-        authApi.login(loginDto.toModel()).data
+    override suspend fun login(loginDto: LoginDto): Login =
+        authApi.login(loginDto.toModel()).data.toEntity()
 
     override suspend fun refreshToken(): RefreshToken =
         authApi.refreshToken().data.toEntity()
