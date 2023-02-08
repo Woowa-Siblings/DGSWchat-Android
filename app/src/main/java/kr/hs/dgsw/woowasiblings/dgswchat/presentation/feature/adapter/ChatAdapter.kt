@@ -1,4 +1,4 @@
-package kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.chat
+package kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

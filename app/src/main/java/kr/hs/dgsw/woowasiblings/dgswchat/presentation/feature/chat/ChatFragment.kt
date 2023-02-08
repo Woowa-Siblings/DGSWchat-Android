@@ -1,6 +1,5 @@
 package kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.chat
 
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
@@ -10,6 +9,7 @@ import kr.hs.dgsw.woowasiblings.dgswchat.R
 import kr.hs.dgsw.woowasiblings.dgswchat.databinding.FragmentChatBinding
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.chat.Chat
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.base.BaseFragment
+import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.adapter.ChatAdapter
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.extension.repeatOnStarted
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.chat.ChatViewModel.Event
 import java.time.LocalTime

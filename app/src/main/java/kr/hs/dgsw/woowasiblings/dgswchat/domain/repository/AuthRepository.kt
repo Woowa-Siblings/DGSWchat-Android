@@ -6,7 +6,7 @@ interface AuthRepository {
 
     suspend fun login(
         loginDto: LoginDto
-    ): String
+    ): Login
 
     suspend fun refreshToken(
     ): RefreshToken

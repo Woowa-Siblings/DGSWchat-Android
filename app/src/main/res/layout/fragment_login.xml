@@ -113,6 +113,7 @@
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
+            android:id="@+id/btn_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -131,7 +132,7 @@
                 android:textSize="10sp" />
 
             <TextView
-                android:id="@+id/btn_register"
+                android:id="@+id/register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pretendard_regular"
