@@ -12,10 +12,11 @@ import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.adapter.PostAdapte
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.add.AddFragment
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.chat.ChatFragment
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.detail.DetailFragment
+import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.PostList
 import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.extension.repeatOnStarted
 
 @AndroidEntryPoint
-class HomeFragment: BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
+class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
 
     override val viewModel: HomeViewModel by viewModels()
 
@@ -43,16 +44,26 @@ class HomeFragment: BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fr
     }
 
     private fun initAdapter(posts: List<Post>) {
-        val postList: MutableList<MutableList<Post>> = mutableListOf()
-        val list: MutableList<Post> = mutableListOf()
-        for (i in 0 .. posts.size / 5) {
-            list.add(posts[i])
-            if (i % 5 == 0) {
-                postList.add(list)
-                list.clear()
-            }
+        val postList: MutableList<PostList> = mutableListOf()
+
+        for (i in 0 until posts.size / 5) {
+            postList.add(
+                PostList(
+                    posts[i * 5],
+                    posts[i * 5 + 1],
+                    posts[i * 5 + 2],
+                    posts[i * 5 + 3],
+                    posts[i * 5 + 4]
+                )
+            )
         }
-        if (list.size != 0) postList.add(list)
+        val idx = (posts.size / 5) * 5
+        when (posts.size % 5) {
+            1 -> postList.add(PostList(posts[idx]))
+            2 -> postList.add(PostList(posts[idx], posts[idx + 1]))
+            3 -> postList.add(PostList(posts[idx], posts[idx + 1], posts[idx + 2]))
+            4 -> postList.add(PostList(posts[idx], posts[idx + 1], posts[idx + 2], posts[idx + 3]))
+        }
 
         val postAdapter = PostAdapter {
             requireActivity().supportFragmentManager.beginTransaction()
@@ -60,10 +71,10 @@ class HomeFragment: BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fr
                     arguments = Bundle().apply { putInt("postId", it.postId) }
                 }).addToBackStack(null)
                 .commit()
-            Log.d("button", "initAdapter: button ${it.postId}")
         }
-        postAdapter.submitList(postList.toList())
-        Log.d("CHECK", "initAdapter: $postList")
+        Log.d("List Value : ", postList.toString())
+
+        postAdapter.submitList(postList)
         binding.rvPost.adapter = postAdapter
     }
 

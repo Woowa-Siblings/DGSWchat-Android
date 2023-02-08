@@ -32,6 +32,9 @@ class DetailFragment :
                     )
                     etMessage.text = null
                 }
+                btnBack.setOnClickListener {
+                    requireActivity().supportFragmentManager.popBackStack()
+                }
             }
         }
 
