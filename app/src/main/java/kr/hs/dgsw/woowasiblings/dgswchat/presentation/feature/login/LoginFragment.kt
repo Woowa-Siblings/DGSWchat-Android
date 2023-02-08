@@ -2,6 +2,7 @@ package kr.hs.dgsw.woowasiblings.dgswchat.presentation.feature.login
 
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import kr.hs.dgsw.woowasiblings.dgswchat.App
 import kr.hs.dgsw.woowasiblings.dgswchat.R
 import kr.hs.dgsw.woowasiblings.dgswchat.databinding.FragmentLoginBinding
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.auth.LoginDto
@@ -19,6 +20,11 @@ class LoginFragment: BaseFragment<FragmentLoginBinding, LoginViewModel>(R.layout
     override val viewModel: LoginViewModel by viewModels()
 
     override fun start() {
+
+        if (App.prefs.accessToken.isEmpty().not()) requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment, HomeFragment())
+            .commit()
+
         with(mViewModel) {
             repeatOnStarted { eventFlow.collect { event -> handleEvent(event) } }
 

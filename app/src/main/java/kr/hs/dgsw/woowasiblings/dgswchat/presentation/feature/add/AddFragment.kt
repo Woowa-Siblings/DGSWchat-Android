@@ -42,6 +42,10 @@ class AddFragment: BaseFragment<FragmentAddBinding, AddViewModel>(R.layout.fragm
                     techTag.setCardBackgroundColor(resources.getColor(R.color.chat))
                     tvTech.setTextColor(resources.getColor(R.color.main))
                 }
+                
+                btnBack.setOnClickListener {
+                    requireActivity().supportFragmentManager.popBackStack()
+                }
             }
         }
     }

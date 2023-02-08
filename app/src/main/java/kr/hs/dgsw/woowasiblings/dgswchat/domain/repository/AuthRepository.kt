@@ -1,6 +1,7 @@
 package kr.hs.dgsw.woowasiblings.dgswchat.domain.repository
 
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.auth.*
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.user.User
 
 interface AuthRepository {
 
@@ -18,4 +19,7 @@ interface AuthRepository {
     suspend fun register(
         registerDto: RegisterDto
     )
+
+    suspend fun getUser(
+    ): User
 }

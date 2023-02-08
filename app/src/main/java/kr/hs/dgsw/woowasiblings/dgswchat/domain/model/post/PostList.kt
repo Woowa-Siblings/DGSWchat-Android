@@ -1,4 +1,4 @@
-package kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils
+package kr.hs.dgsw.woowasiblings.dgswchat.domain.model.post
 
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.post.Post
 

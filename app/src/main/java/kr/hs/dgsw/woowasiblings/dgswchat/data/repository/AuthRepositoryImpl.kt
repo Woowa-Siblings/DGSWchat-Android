@@ -4,6 +4,7 @@ import kr.hs.dgsw.woowasiblings.dgswchat.data.mapper.toEntity
 import kr.hs.dgsw.woowasiblings.dgswchat.data.mapper.toModel
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.api.AuthApi
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.auth.*
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.user.User
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.repository.AuthRepository
 import javax.inject.Inject
 
@@ -21,5 +22,8 @@ class AuthRepositoryImpl @Inject constructor(
 
     override suspend fun register(registerDto: RegisterDto) =
         authApi.register(registerDto.toModel()).data
+
+    override suspend fun getUser(): User =
+        authApi.getProfile().data.toEntity()
 
 }

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kr.hs.dgsw.woowasiblings.dgswchat.R
 import kr.hs.dgsw.woowasiblings.dgswchat.databinding.PostItemBinding
 import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.post.Post
-import kr.hs.dgsw.woowasiblings.dgswchat.presentation.utils.PostList
+import kr.hs.dgsw.woowasiblings.dgswchat.domain.model.post.PostList
 
 class PostAdapter(val onClick: (Post) -> Unit) : ListAdapter<PostList, PostAdapter.PostViewHolder>(PostDiffUtilCallback) {
 

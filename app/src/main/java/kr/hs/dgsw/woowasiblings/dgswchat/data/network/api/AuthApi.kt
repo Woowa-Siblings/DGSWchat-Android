@@ -7,6 +7,7 @@ import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.auth.RefreshToken
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.auth.TokenResponse
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.Response
 import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.auth.LoginResponse
+import kr.hs.dgsw.woowasiblings.dgswchat.data.network.response.user.UserResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -31,4 +32,8 @@ interface AuthApi {
     suspend fun register(
         @Body registerRequest: RegisterRequest
     ): Response<Unit>
+
+    @GET("auth/myProfile")
+    suspend fun getProfile(
+    ): Response<UserResponse>
 }
